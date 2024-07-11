@@ -1,29 +1,173 @@
+@font-face {
+    font-family: Norse-Bold;
+    src: url(Norse-Bold.otf);
+}
+
+:root {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1{
+    font-family: "Norse-Bold", Arial;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    background-color: #EDEEEE;
+
+    --top_spacing: 20%;
+    --title_pane_width: 40%;
+    --main_pane_width: 60%;
+    --main_component_width: 80%;
+
+    --title_color: #eee;
+    --title_bg: rgba(30, 30, 30, 50%);
+    --text_color: rgb(30,30,30);
+
+}
+
+.title_pane {
+    height: 100%;
+    width: var(--title_pane_width);
+
+    background-image: url("alejandro-pinero-amerio-KBn4-lyqRgQ-unsplash.jpg");
+    background-size: 100% 100%;
+
+    position: relative;
+    color: var(--title_color);
+}
+
+.title_wrapper {
+    height: 8rem;
     width: 100%;
+
+    position: absolute;
+    top: var(--top_spacing);
+    background-color: var(--title_bg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-    width: 97.8%;
-
+.title_logo {
+    height: 80%;
+    width: auto;
 }
 
-main {
-    padding: 2rem;
+.title {
+    font-family: "Norse-Bold", Arial;
+    font-size: 5rem;
+    margin-top: 1rem;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
+.credit {
+    font-size: 0.6rem;
+
     position: absolute;
     bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.credit > a:link {
+    color: var(--title_color)
+}
+
+.credit a:visited{
+    color: white;
+}
+
+.nameForm, .userInfo, .userPass, .subButton{
+    display: flex;
+}
+
+.nameForm, .userInfo, .userPass, .subButton, div{
+    padding:0.5rem;
+}
+
+.text{
+    margin: 1rem;
+    font-weight: bold;
+}
+
+.text p{
+    margin-bottom: 1rem;
+}
+
+.text p:last-child{
+    margin-bottom: 1rem;
+}
+
+.login_form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color:white;
     width: 100%;
+    
+}
+.login_form p:first-child{
+    margin-bottom: 0.5rem 1rem;
+}
+.AlrAcc{
+    margin: 1rem;
+
+}
+.AlrAcc p{
+    font-size:x-small;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+input {
+    width: 200px;
+    /*border-color: #aec0e5;*/
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    padding: .5rem;
+}
+input:focus {
+    border-color: blue;
+}
+
+input:invalid:active {
+    border-color: red;
+}
+input:valid {
+    border-color: green;
+}
+input::placeholder {
+    color: #999999
+}
+
+label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+}
+button{
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    color: var(--title_color);
+    background-color: #48646d;
 }
